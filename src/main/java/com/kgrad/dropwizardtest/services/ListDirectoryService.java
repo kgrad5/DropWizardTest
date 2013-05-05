@@ -6,8 +6,6 @@ import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.kgrad.dropwizardtest.resources.ListDirectoryResource;
 import com.kgrad.dropwizardtest.health.DirectoryHealthCheck;
-import com.kgrad.dropwizardtest.resources.DirectoryResource;
-import com.yammer.dropwizard.views.View;
 import com.yammer.dropwizard.views.ViewBundle;
 
 public class ListDirectoryService extends Service<ListDirectoryConfiguration> {
@@ -27,7 +25,6 @@ public class ListDirectoryService extends Service<ListDirectoryConfiguration> {
             Environment environment) {
         final String directory = configuration.getDirectory();
         environment.addResource(new ListDirectoryResource(directory));
-        environment.addResource(new DirectoryResource(directory));
         environment.addHealthCheck(new DirectoryHealthCheck(directory));
     }
 }

@@ -12,10 +12,6 @@ public class DirectoryHealthCheck extends HealthCheck {
 
     @Override
     protected Result check() throws Exception {
-        final String saying = String.format(directory, "TEST");
-        if (!saying.contains("TEST")) {
-            return Result.unhealthy("directory doesn't include a string");
-        }
         return Result.healthy();
     }
 }
