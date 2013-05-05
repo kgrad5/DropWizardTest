@@ -69,7 +69,6 @@
                     </execution>
                 </executions>
             </plugin>
-            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -82,15 +81,20 @@
                     </archive>
                 </configuration>
             </plugin>
-            
         </plugins>
         <resources>
-        <resource>
-        <directory>src/main/java</directory>
-            <includes>
-                <include> **/*.mustache</include>
-            </includes>
-        </resource>
-    </resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.mustache</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.ftl</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>
